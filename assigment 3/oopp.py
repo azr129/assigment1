@@ -42,6 +42,49 @@ class OpenAccount(transaction):
     def get_transaction_description(self):
         return U'Teller {self.get_teller_id()} opened account {self.get_customer_id()}'
     
-
+class BankAccount:
+    def __init__(self, customerId, name, balance):
+        self._customerId = customerId
+        self._name = name
+        self._balance = balance
     
+    def get_balance(self):
+        return self._balance
+    
+    def deposit(self, amount):
+        self._balance += amount
 
+    def withdraw(self, amount):
+        self._balance -= amount
+
+
+class bankaccounts:
+    def __init__(self):
+        pass
+
+    def get_savings_account(self, amount):
+        self._balance += amount
+
+    def get_checquing_account(self, amount):
+        self._balance = amount 
+
+
+class ShowAccountMenu:
+    def __init__(self, balance, deposit, withdraw, exit_account):
+        self._balance = balance
+        self._deposit = deposit 
+        self._withdraw = withdraw
+        self._exit_account = exit_account
+
+
+    def get_balance(self):
+        return self._balance
+    
+    def get_deposit(self):
+        return self._deposit
+    
+    def get_withdraw(self):
+        return self._withdraw
+    
+    def get_exit_account(self):
+        return self._exit_account
